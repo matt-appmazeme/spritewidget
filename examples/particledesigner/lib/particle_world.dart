@@ -31,11 +31,11 @@ class ParticleWorld extends NodeWithSize {
   }
 
   @override bool handleEvent(SpriteBoxEvent event) {
-    if (event.type == PointerDownEvent || event.type == PointerMoveEvent) {
+    if (event.type is PointerDownEvent || event.type is PointerMoveEvent) {
       particleSystem.insertionOffset = convertPointToNodeSpace(event.boxPosition) - const Offset(512.0, 512.0);
     }
 
-    if (event.type == PointerDownEvent) {
+    if (event.type is PointerDownEvent) {
       particleSystem.reset();
     }
 
